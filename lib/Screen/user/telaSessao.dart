@@ -19,6 +19,7 @@ class TelaSessao extends StatefulWidget {
 
 class _TelaSessaoState extends State<TelaSessao> {
   int _currentIndex = 0;
+  bool _isDescriptionExpanded = false;
 
   void onTabTapped(int index) {
     setState(() {
@@ -70,6 +71,49 @@ class _TelaSessaoState extends State<TelaSessao> {
                 style: const TextStyle(
                   fontSize: 32.0,
                   fontWeight: FontWeight.bold,
+                ),
+              ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _isDescriptionExpanded = !_isDescriptionExpanded;
+                });
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.blue,
+                ),
+                padding: const EdgeInsets.all(3),
+                child: Text(
+                  _isDescriptionExpanded ? "Minimizar Descrição" : "Maximizar Descrição",
+                  style: const TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            if (_isDescriptionExpanded)
+              Card(
+                margin: const EdgeInsets.all(8.0),
+                elevation: 2,
+                child: Column(
+                  children: [
+                    ListTile(
+                      title: const Text("Descrição do Evento"),
+                      trailing: IconButton(
+                        icon: Icon(_isDescriptionExpanded ? Icons.remove : Icons.add),
+                        onPressed: () {
+                          setState(() {
+                            _isDescriptionExpanded = !_isDescriptionExpanded;
+                          });
+                        },
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text("Esse evento oferece a grande oportunidade......"),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(height: 30),
