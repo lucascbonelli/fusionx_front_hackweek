@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/telaSessao.dart';
+import 'package:teste/Screen/user/telaSessao.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/carrossel_widget.dart';
 import '../../widgets/bottomNavigation.dart';
@@ -47,16 +47,17 @@ class _PaginaInicialUsuarioState extends State<PaginaInicialUsuario> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const CarrosselWidget(),
-            ElevatedButton(
-              onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => TelaSessao()),
-                      );
+            CarrosselWidget(
+              tapItem: (String imageName, String title) {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => TelaSessao(
+                    imageName: imageName,
+                    title: title,
+                    ),
+                  ),
+                );
               },
-              child: const Text("INSCREVA-SE"),
-              
-            ),  
+            ),
             const SizedBox(height: 12),
 
             ElevatedButton(
