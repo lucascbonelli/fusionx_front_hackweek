@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppBarTop extends StatefulWidget implements PreferredSizeWidget {
-  const AppBarTop({super.key});
+  final bool hasMenu;
+  const AppBarTop({super.key, this.hasMenu = true});
 
   @override
   State<AppBarTop> createState() => _AppBarTopState();
@@ -21,16 +22,19 @@ class _AppBarTopState extends State<AppBarTop> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-         IconButton(
-            icon: const Icon(Icons.menu),
+          IconButton(
+            icon: Icon(widget.hasMenu ? Icons.menu : Icons.arrow_back_ios),
             onPressed: () {
-              Scaffold.of(context).openDrawer();
+              widget.hasMenu
+                  ? Scaffold.of(context).openDrawer()
+                  : Navigator.of(context).pop();
             },
           ),
           Padding(
             padding: const EdgeInsets.all(3),
             child: ClipOval(
-              child:  SizedBox(height:  100, child: Image.asset("lib/imagens/logo.jpg")),
+              child: SizedBox(
+                  height: 100, child: Image.asset("lib/imagens/logo2.png")),
             ),
           ),
           IconButton(
