@@ -81,13 +81,9 @@ class _TelaSessaoState extends State<TelaSessao> {
                 });
               },
               child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  color: Colors.blue,
-                ),
                 padding: const EdgeInsets.all(3),
                 child: Text(
-                  _isDescriptionExpanded ? "Minimizar Descrição" : "Maximizar Descrição",
+                  _isDescriptionExpanded ? "Menos detalhes" : "Mais detalhes",
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
@@ -111,7 +107,7 @@ class _TelaSessaoState extends State<TelaSessao> {
                     ),
                     const Padding(
                       padding: EdgeInsets.all(16.0),
-                      child: Text("Esse evento oferece a grande oportunidade......"),
+                      child: Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae tincidunt eros. Integer nec pulvinar tellus, eu fringilla arcu. Nunc id eleifend nisi. Nulla ultrices magna sed neque scelerisque, et."),
                     ),
                   ],
                 ),
@@ -149,7 +145,9 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        // Ação a ser executada quando o segundo botão é pressionado
+                        Navigator.of(context).pushReplacement(
+                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        );
                       },
                       child: const Text("09:00 - 10:00 Sessão 2"),
                     ),
