@@ -8,7 +8,8 @@ class AlertDialogApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      
     );
   }
 }
@@ -59,7 +60,7 @@ class _DialogExampleState extends State<DialogExample> {
             borderRadius: BorderRadius.circular(20.0), // Raio para arredondar
             child: Container(
               color: Colors.blue, // Cor de fundo do botão
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16),
               child: const Text('MENSAGEM'),
             ),
           ),

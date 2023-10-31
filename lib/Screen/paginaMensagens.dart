@@ -49,10 +49,9 @@ class _PaginaMensagensState extends State<PaginaMensagens> {
 
 class Message {
   final String text;
-  final IconData icon; // Ícone da mensagem
   bool isDeleted;
 
-  Message(this.text, this.icon, {this.isDeleted = false});
+  Message(this.text, {this.isDeleted = false});
 }
 
 class MessageList extends StatefulWidget {
@@ -62,15 +61,15 @@ class MessageList extends StatefulWidget {
 
 class _MessageListState extends State<MessageList> {
   List<Message> messages = [
-    Message('MENSAGEM 1', Icons.mail, isDeleted: false),
-    Message('INSCRIÇÃO 2', Icons.event, isDeleted: false),
-    Message('URGENTE 3', Icons.warning, isDeleted: false),
-    Message('MENSAGEM 4', Icons.mail, isDeleted: false),
-    Message('INSCRIÇÃO 5', Icons.event, isDeleted: false),
-    Message('URGENTE 6', Icons.warning, isDeleted: false),
-    Message('MENSAGEM 7', Icons.mail, isDeleted: false),
-    Message('INSCRIÇÃO 8', Icons.event, isDeleted: false),
-    Message('URGENTE 9', Icons.warning, isDeleted: false),
+    Message('MENSAGEM'),
+    Message('INSCRIÇÃO!'),
+    Message('URGENTE'),
+    Message('MENSAGEM'),
+    Message('INSCRIÇÃO!'),
+    Message('URGENTE'),
+    Message('MENSAGEM'),
+    Message('INSCRIÇÃO!'),
+    Message('URGENTE'),
   ];
 
   @override
@@ -79,7 +78,6 @@ class _MessageListState extends State<MessageList> {
       itemCount: messages.length,
       itemBuilder: (context, index) {
         return ListTile(
-          leading: Icon(messages[index].icon), // Ícone à esquerda
           title: Text(messages[index].text),
           trailing: ClipRRect(
             borderRadius: BorderRadius.circular(20.0), // Raio para arredondar
