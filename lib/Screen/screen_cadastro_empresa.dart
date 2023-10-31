@@ -1,15 +1,16 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:flutter/material.dart';
-import 'package:teste/widgets/cadastro_widgets_empresa.dart';
+
+import '../widgets/cadastro_widgets_empresa.dart';
+
 
 class screen_cadastro_empresa extends StatefulWidget {
-  const screen_cadastro_empresa({super.key});
+  const screen_cadastro_empresa({Key? key}) : super(key: key);
 
   @override
   State<screen_cadastro_empresa> createState() => screen_cadastroState();
 }
-
 class screen_cadastroState extends State<screen_cadastro_empresa> {
   TextEditingController NomeController = TextEditingController();
   TextEditingController EmailController = TextEditingController();
@@ -18,6 +19,8 @@ class screen_cadastroState extends State<screen_cadastro_empresa> {
   TextEditingController SenhaController = TextEditingController();
   TextEditingController ConfirmarSenhaController = TextEditingController();
 
+  final PasswordVisibility passwordVisibility = PasswordVisibility();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,27 +28,48 @@ class screen_cadastroState extends State<screen_cadastro_empresa> {
         title: const Text('Cadastro'),
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Nome(),
-            const Email(),
-            const Celular(),
-            const Cnpj(),
-            const Senha(),
-            const ConfirmarSenha(),
-            ElevatedButton(
-              onPressed: () {
-                // Validar os dados
-                if (SenhaController.text == ConfirmarSenhaController.text) {
-                  // Cadastro realizado com sucesso
-                } else {
-                  // Senhas não conferem
-                }
-              },
-              child: const Text('Cadastrar'),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Nome(),
+                const Email(),
+                const Celular(),
+                const Cnpj(),
+                Senha(passwordVisibility: passwordVisibility),
+                ConfirmarSenha(passwordVisibility: passwordVisibility),
+                ElevatedButton(
+                  onPressed: () {
+                    if (senhaController.text == confirmarSenhaController.text) {
+
+                    } else {
+                      // Senhas não conferem
+                      showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('Senhas não conferem'),
+                            content: Text('As senhas informadas não coincidem. Por favor, verifique e tente novamente.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Text('OK'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    }
+                  },
+                  child: const Text('Cadastrar'),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );

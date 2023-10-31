@@ -1,53 +1,199 @@
 import 'package:flutter/material.dart';
 
+import '../Screen/screen_formulario_cadastro_evento2.dart';
+import '../core/constants/states_constants.dart';
+import '../core/model.dart';
+
 class LocalInfoWidget extends StatefulWidget {
+  const LocalInfoWidget({Key? key}) : super(key: key);
+
   @override
   _LocalInfoWidgetState createState() => _LocalInfoWidgetState();
 }
 
 class _LocalInfoWidgetState extends State<LocalInfoWidget> {
-  final List<String> estadosAbreviados = [
-    'Selecione um Estado', 'AC', 'AL', 'AP', 'AM', 'BA', 'CE', 'ES', 'GO', 'MA', 'MT', 'MS', 'MG',
-    'PA', 'PB', 'PR', 'PE', 'PI', 'RJ', 'RN', 'RS', 'RO', 'RR', 'SC', 'SP', 'SE', 'TO'
-  ];
-
   String? selectedState;
+  final TextEditingController nomeDoLocalController = TextEditingController();
+  final TextEditingController enderecoController = TextEditingController();
+  final TextEditingController cepController = TextEditingController();
+  final TextEditingController numeroController = TextEditingController();
+  final TextEditingController ruaController = TextEditingController();
+  final TextEditingController bairroController = TextEditingController();
+  final TextEditingController complementoController = TextEditingController();
+  final TextEditingController cidadeController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    selectedState = estadosAbreviados.first;
-  }
+  final LocalModel localInfo = LocalModel(
+    nomeDoLocal: '',
+    endereco: '',
+    cep: '',
+    numero: '',
+    rua: '',
+    bairro: '',
+    complemento: '',
+    cidade: '',
+  );
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Informações do Local')),
-      body: ListView(
-        padding: EdgeInsets.all(16.0),
-        children: <Widget>[
-          TextField(decoration: InputDecoration(labelText: 'Nome do Local')),
-          TextField(decoration: InputDecoration(labelText: 'Endereço')),
-          _buildCepNumeroRow(),
-          TextField(decoration: InputDecoration(labelText: 'Rua')),
-          TextField(decoration: InputDecoration(labelText: 'Bairro')),
-          TextField(decoration: InputDecoration(labelText: 'Complemento')),
-          _buildCidadeEstadoRow(),
-          Text('Estado Selecionado: ${selectedState ?? 'Nenhum estado selecionado'}'),
-        ],
-      ),
+    return CustomScrollView(
+      scrollDirection: Axis.vertical,
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Form(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Container(
+                      child: TextField(
+                          controller: nomeDoLocalController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            labelText: 'Nome do Local',
+                          ),
+                          onChanged: (value) {
+                            setState(() {
+                              localInfo.nomeDoLocal = value;
+                            });
+                          })),
+                  _buildCepNumeroRow(cepController, numeroController),
+                  Container(
+                    child: TextField(
+                      controller: ruaController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                        labelText: 'Rua',
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          localInfo.rua = value;
+                        });
+                      },
+                    ),
+                  ),
+                  Container(
+                    child: TextField(
+                      controller: bairroController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                        labelText: 'Bairro',
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          localInfo.bairro = value;
+                        });
+                      },
+                    ),
+                  ),
+                  Container(
+                    child: TextField(
+                      controller: complementoController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                        labelText: 'Complemento',
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          localInfo.complemento = value;
+                        });
+                      },
+                    ),
+                  ),
+                  _buildCidadeEstadoRow(),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          height: 50,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const FormularioCadastro2(),
+                                ),
+                              );
+                            },
+                            child: const Text('Proxima etapa'),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
-  Widget _buildCepNumeroRow() {
+  Widget _buildCepNumeroRow(
+    TextEditingController cepController,
+    TextEditingController numeroController,
+  ) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Expanded(
-          child: TextField(decoration: InputDecoration(labelText: 'CEP')),
+        Container(
+          width: 210,
+          child: TextField(
+            controller: cepController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+              labelText: 'CEP',
+            ),
+            onChanged: (value) {
+              setState(() {
+                localInfo.cep = value;
+              });
+            },
+          ),
         ),
-        SizedBox(width: 16),
-        Expanded(
-          child: TextField(decoration: InputDecoration(labelText: 'Número')),
+        const SizedBox(width: 16),
+        Container(
+          width: 125,
+          child: TextField(
+            controller: numeroController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+              labelText: 'Número',
+            ),
+            onChanged: (value) {
+              setState(() {
+                localInfo.numero = value;
+              });
+            },
+          ),
         ),
       ],
     );
@@ -55,34 +201,59 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
 
   Widget _buildCidadeEstadoRow() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Expanded(
-          child: TextField(decoration: InputDecoration(labelText: 'Cidade')),
+        Container(
+          width: 180,
+          child: TextField(
+            controller: cidadeController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+              ),
+              labelText: 'Cidade',
+            ),
+            onChanged: (value) {
+              setState(() {
+                localInfo.cidade = value;
+              });
+            },
+          ),
         ),
-        SizedBox(width: 16),
-        Expanded(
-          child: _buildStateSelector(),
-        ),
+        _buildStateSelector(),
       ],
     );
   }
 
   Widget _buildStateSelector() {
-    return DropdownButtonFormField<String>(
-      value: selectedState,
-      items: estadosAbreviados.map((estado) {
-        return DropdownMenuItem<String>(
-          value: estado,
-          child: Text(estado),
-        );
-      }).toList(),
-      onChanged: (value) {
-        setState(() {
-          selectedState = value;
-        });
-      },
-      decoration: InputDecoration(
-        labelText: 'Selecione um Estado',
+    return Container(
+      height: 60,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10.0),
+        child: Center(
+          child: DropdownButton<String>(
+            underline: const SizedBox(),
+            alignment: Alignment.centerLeft,
+            value: selectedState,
+            items: AppConstants.estadosAbreviados.map((estado) {
+              return DropdownMenuItem<String>(
+                value: estado,
+                child: Text(estado),
+              );
+            }).toList(),
+            onChanged: (value) {
+              setState(() {
+                selectedState = value;
+              });
+            },
+          ),
+        ),
       ),
     );
   }

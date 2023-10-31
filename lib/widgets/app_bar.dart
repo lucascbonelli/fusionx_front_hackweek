@@ -40,15 +40,5 @@ class _AppBarTopState extends State<AppBarTop> {
         ],
       ),
     );
-    AppBar(
-      title: ClipOval(child: Image.asset("lib/imagens/logo.jpg")),
-      centerTitle: true,
-      actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.notifications),
-          onPressed: () {},
-        ),
-      ],
-    );
   }
 }
