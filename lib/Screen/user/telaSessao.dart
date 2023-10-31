@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/alertDialogApp.dart';
+import 'package:teste/Screen/paginaMensagens.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/bottomNavigation.dart';
 
@@ -136,8 +136,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar esta inscrição?\n\n08:00 - 09:00 Sessão 1'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("08:00 - 09:00 Sessão 1"),
@@ -145,8 +166,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar esta inscrição?\n\n09:00 - 10:00 Sessão 2'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("09:00 - 10:00 Sessão 2"),
@@ -154,8 +196,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar esta inscrição?\n\n11:00 - 12:00 Sessão 3'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("11:00 - 12:00 Sessão 3"),
@@ -188,8 +251,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar essa inscrição?\n\n22:00 - 23:00 Sessão 1'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("22:00 - 23:00 Sessão 1"),
@@ -197,8 +281,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar essa inscrição?\n\n23:00 - 00:00 Sessão 2'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("23:00 - 00:00 Sessão 2"),
@@ -206,8 +311,29 @@ class _TelaSessaoState extends State<TelaSessao> {
                     const SizedBox(height: 16),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (context) => const DialogExample()),
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('INSCRIÇÃO'),
+                            content: const Text('Deseja realmente realizar essa inscrição?\n\n00:00 - 01:00 Sessão 3'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'Cancel');
+                                },
+                                child: const Text('Não'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.pop(context, 'OK');
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(builder: (context) => PaginaMensagens()),
+                                  );
+                                },
+                                child: const Text('Sim'),
+                              ),
+                            ],
+                          ),
                         );
                       },
                       child: const Text("00:00 - 01:00 Sessão 3"),
