@@ -7,7 +7,7 @@ import 'package:teste/Screen/screen_cadastro_usuario.dart';
 import 'package:teste/Screen/screen_login.dart';
 import 'package:teste/Screen/telaInfoUsuario.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
-import 'package:teste/Screen/telaSessao.dart';
+import 'package:teste/Screen/user/telaSessao.dart';
 import 'package:teste/widgets/login_widgets.dart';
 import 'Screen/avisoEventoUsuario.dart';
 import 'Screen/cadastroEventoUsuario.dart';

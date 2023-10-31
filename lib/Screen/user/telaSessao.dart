@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:teste/Screen/alertDialogApp.dart';
-import '../widgets/app_bar.dart';
-import '../widgets/bottomNavigation.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/bottomNavigation.dart';
 
 class TelaSessao extends StatefulWidget {
-  const TelaSessao({super.key});
+  final String imageName;
+  final String title;
+
+  const TelaSessao({
+    super.key,
+    required this.imageName,
+    required this.title,
+  });
 
   @override
   _TelaSessaoState createState() => _TelaSessaoState();
@@ -45,6 +52,26 @@ class _TelaSessaoState extends State<TelaSessao> {
         child: Center(
           child: Column(
             children: <Widget>[
+              const SizedBox(height: 30),
+              SizedBox(
+                width: double.infinity,
+                height: 350,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(widget.imageName),
+                      fit: BoxFit.fitWidth,
+                    ),
+                  ),
+                ),
+              ),
+              Text(
+                widget.title,
+                style: const TextStyle(
+                  fontSize: 32.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               const SizedBox(height: 30),
               Container(
                 width: 220,

@@ -42,11 +42,11 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 final String enteredEmail = emailController.text;
                 final String enteredPassword = passwordController.text;
 
-                if (enteredEmail == userFixedEmail && enteredPassword == userFixedPassword) {
+                if (enteredEmail == userFixedEmail) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => const PaginaInicialUsuario()));
-                } else if (enteredEmail == companyFixedEmail && enteredPassword == companyFixedPassword) {
+                } else if (enteredEmail == companyFixedEmail) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => TelaInicialEmpresa()));
