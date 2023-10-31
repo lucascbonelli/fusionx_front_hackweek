@@ -1,8 +1,7 @@
 // ignore_for_file: non_constant_identifier_names, camel_case_types
 
 import 'package:flutter/material.dart';
-
-import 'package:teste/widgets/cadastro_widgets_usuario.dart';
+import '../widgets/cadastro_widgets_usuario.dart';
 
 class screen_cadastro_usuario extends StatefulWidget {
   const screen_cadastro_usuario({super.key});

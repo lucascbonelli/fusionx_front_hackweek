@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:teste/widgets/cadastro_widgets_empresa.dart';
+
+import '../core/model.dart';
 
 class EventoCadastradoCard extends StatefulWidget {
-  const EventoCadastradoCard({super.key});
+  final ImageProvider? image;
+  const EventoCadastradoCard({super.key, this.image, });
 
   @override
   State<EventoCadastradoCard> createState() => _EventoCadastradoCardState();
@@ -17,12 +21,23 @@ class _EventoCadastradoCardState extends State<EventoCadastradoCard> {
         child: Row(
           children: [
             Container(
-              color: Colors.blue,
               width: 100,
               height: 100,
+              decoration: BoxDecoration(
+                image: widget.image != null
+                    ? DecorationImage(
+                  image: widget.image!,
+                  fit: BoxFit.cover,
+                )
+                    : null,
+              ),
             ),
             const SizedBox(width: 12),
-            const Text('Titulo Evento'),
+            const Text('Teste',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,),
+            ),
             const Spacer(),
             const Icon(Icons.arrow_forward_ios)
           ],

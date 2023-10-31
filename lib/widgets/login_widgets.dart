@@ -1,9 +1,7 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, camel_case_types, avoid_unnecessary_containers
-
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({super.key});
+  const Logo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +10,7 @@ class Logo extends StatelessWidget {
         height: 65,
         width: 65,
         child: Image.asset(
-          'imagens/logo1.jfif',
+          'lib/imagens/logo2.png',
           fit: BoxFit.cover,
           width: 50,
           height: 50,
@@ -23,7 +21,7 @@ class Logo extends StatelessWidget {
 }
 
 class TextoEntrar extends StatelessWidget {
-  const TextoEntrar({super.key});
+  const TextoEntrar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +35,21 @@ class TextoEntrar extends StatelessWidget {
   }
 }
 
-class textForm extends StatelessWidget {
-  const textForm({super.key});
+class TextForm extends StatefulWidget {
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
 
+  const TextForm({
+    Key? key,
+    required this.emailController,
+    required this.passwordController,
+  }) : super(key: key);
+
+  @override
+  _TextFormState createState() => _TextFormState();
+}
+
+class _TextFormState extends State<TextForm> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,20 +58,26 @@ class textForm extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(15),
           child: TextField(
+            controller: widget.emailController,
             decoration: InputDecoration(
               labelText: 'Email',
-              border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(50)),
+              ),
             ),
           ),
         ),
-        SizedBox(height: 90,
+        SizedBox(
+          height: 90,
           child: Padding(
-            padding: const EdgeInsets.all(15
-            ),
+            padding: const EdgeInsets.all(15),
             child: TextField(
+              controller: widget.passwordController,
               obscureText: true,
               decoration: InputDecoration(
-                border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(50))),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(50)),
+                ),
                 labelText: 'Password',
               ),
             ),
@@ -73,7 +89,12 @@ class textForm extends StatelessWidget {
 }
 
 class Botoes extends StatelessWidget {
-  const Botoes({super.key});
+  final VoidCallback onEntrarPressed;
+
+  const Botoes({
+    Key? key,
+    required this.onEntrarPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +102,7 @@ class Botoes extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ElevatedButton(
-          onPressed: () {},
+          onPressed: onEntrarPressed,
           child: Text('Entrar'),
         ),
         TextButton(

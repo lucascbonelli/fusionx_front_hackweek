@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teste/Screen/screen_formulario_cadastro_evento.dart';
 
 class BotaoCadastrarEvento extends StatelessWidget {
   const BotaoCadastrarEvento({super.key});
@@ -6,9 +7,14 @@ class BotaoCadastrarEvento extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        // Implemente a ação do botão de cadastrar evento aqui
-      },
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const FormularioCadastro(),
+            ),
+          );
+        },
       child: const Text("Cadastrar Evento"),
     );
   }

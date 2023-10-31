@@ -1,33 +1,77 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, camel_case_types
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, camel_case_types, file_names
 
 import 'package:flutter/material.dart';
-import 'package:teste/widgets/botao_cadastrar_widget.dart';
-import 'package:teste/widgets/cadastro_evento_widget.dart';
-import 'package:teste/widgets/carrossel_widget.dart';
+import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/screen_mensagem_programada.dart';
 
 import '../widgets/app_bar.dart';
+import '../widgets/botao_cadastrar_widget.dart';
+import '../widgets/bottom.dart';
+import '../widgets/cadastro_evento_widget.dart';
+import '../widgets/carrossel_widget.dart';
 
-class telaInicial_empresa extends StatefulWidget {
+class TelaInicialEmpresa extends StatefulWidget {
   @override
-  State<telaInicial_empresa> createState() => _telaInicial_empresaState();
+  State<TelaInicialEmpresa> createState() => _TelaInicialEmpresaState();
 }
 
-class _telaInicial_empresaState extends State<telaInicial_empresa> {
+class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
+  int _currentIndex = 0;
+
+  void _onTabTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+
+    if (index == 0) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => TelaInicialEmpresa()),
+      );
+    } else if (index == 1) {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => ScreenGrafico(
+          peopleHasCame: 10,
+          peopleHasConfirmed: 20,
+          peopleHasConfirmedAndNotCame: 10,)),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(150), child: AppBarTop()),
+          preferredSize: Size.fromHeight(150), child: AppBarTop(hasMenu:true)),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo.jpg"),
+              child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Item 1"),
+              title: const Text("Grafico"),
               onTap: () {
-                // Implemente a ação do item do menu aqui
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ScreenGrafico(
+                      peopleHasCame: 10,
+                      peopleHasConfirmed: 20,
+                      peopleHasConfirmedAndNotCame: 10,
+                    ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text("Programar mensagem"),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => MessageScreen(),
+                  ),
+                );
               },
             ),
           ],
@@ -35,11 +79,12 @@ class _telaInicial_empresaState extends State<telaInicial_empresa> {
       ),
       body: Column(
         children: <Widget>[
-          CarrosselWidget(), // Usando o widget do carrossel
+         //CarrosselWidget(),
+          SizedBox(width: 20,),
           BotaoCadastrarEvento(), // Usando o widget do botão "Cadastrar Evento"
           Flexible(
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 3,
               itemBuilder: (context, index) {
                 return EventoCadastradoCard(); // Usando o widget do item da lista
               },
@@ -47,7 +92,10 @@ class _telaInicial_empresaState extends State<telaInicial_empresa> {
           ),
         ],
       ),
-      // ...
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTabTapped: _onTabTapped,
+      ),
     );
   }
 }
