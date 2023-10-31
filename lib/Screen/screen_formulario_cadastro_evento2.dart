@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:chips_choice/chips_choice.dart';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:image_picker/image_picker.dart';
@@ -188,7 +187,7 @@ class _FormularioCadastro2State extends State<FormularioCadastro2> {
                                     ),
                                   );
                                 },
-                                child: const Text('Proxima etapa'),
+                                child: const Text('Próxima etapa'),
                               ),
                             ),
                           ),

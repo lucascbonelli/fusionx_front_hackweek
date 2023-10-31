@@ -85,7 +85,7 @@ class _FormularioCadastro3State extends State<FormularioCadastro3> {
               child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Pagina Inicial"),
+              title: const Text("Página Inicial"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -95,7 +95,7 @@ class _FormularioCadastro3State extends State<FormularioCadastro3> {
               },
             ),
             ListTile(
-              title: const Text("Grafico"),
+              title: const Text("Gráfico"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -235,7 +235,7 @@ class _FormularioCadastro3State extends State<FormularioCadastro3> {
                                 ),
                               );
                             },
-                            child: const Text('Proxima etapa'),
+                            child: const Text('Próxima etapa'),
                           ),
                         ),
                       ),

@@ -7,12 +7,8 @@ class PaginaMensagens extends StatefulWidget {
 }
 
 class _PaginaMensagensState extends State<PaginaMensagens> {
-  int _currentIndex = 0;
 
   void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
   }
 
   @override
@@ -50,6 +46,8 @@ class Message {
 }
 
 class MessageList extends StatefulWidget {
+  const MessageList({super.key});
+
   @override
   _MessageListState createState() => _MessageListState();
 }

@@ -51,7 +51,7 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
               child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Grafico"),
+              title: const Text("Gráfico"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

@@ -18,7 +18,7 @@ class _EventRatingPageState extends State<EventRatingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
+      appBar: const PreferredSize(
         preferredSize: Size.fromHeight(150),
         child: AppBarTop(),
       ),
@@ -43,11 +43,11 @@ class _EventRatingPageState extends State<EventRatingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 'Avalie o evento!',
                 style: TextStyle(fontSize: 18),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               RatingBar.builder(
                 initialRating: _userRating,
                 minRating: 1,
@@ -55,8 +55,8 @@ class _EventRatingPageState extends State<EventRatingPage> {
                 allowHalfRating: true,
                 itemCount: 5,
                 itemSize: 40,
-                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-                itemBuilder: (context, _) => Icon(
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) => const Icon(
                   Icons.star,
                   color: Colors.amber,
                 ),
@@ -66,17 +66,17 @@ class _EventRatingPageState extends State<EventRatingPage> {
                   });
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   _showRatingConfirmation();
                 },
-                child: Text('Enviar Avaliação'),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0), // Raio para arredondar
                   ),
                 ),
+                child: const Text('Enviar Avaliação'),
               ),
             ],
           ),
@@ -90,7 +90,7 @@ class _EventRatingPageState extends State<EventRatingPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Avaliação Enviada'),
+          title: const Text('Avaliação Enviada'),
           content: Text('Sua avaliação: $_userRating estrela(s)'),
           actions: <Widget>[
             TextButton(
@@ -98,7 +98,7 @@ class _EventRatingPageState extends State<EventRatingPage> {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => PaginaMensagens()));
               },
-              child: Text('OK'),
+              child: const Text('OK'),
             ),
           ],
         );

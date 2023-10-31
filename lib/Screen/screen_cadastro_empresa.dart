@@ -50,14 +50,14 @@ class screen_cadastroState extends State<screen_cadastro_empresa> {
                         context: context,
                         builder: (context) {
                           return AlertDialog(
-                            title: Text('Senhas não conferem'),
-                            content: Text('As senhas informadas não coincidem. Por favor, verifique e tente novamente.'),
+                            title: const Text('Senhas não conferem'),
+                            content: const Text('As senhas informadas não coincidem. Por favor, verifique e tente novamente.'),
                             actions: [
                               TextButton(
                                 onPressed: () {
                                   Navigator.pop(context);
                                 },
-                                child: Text('OK'),
+                                child: const Text('OK'),
                               ),
                             ],
                           );

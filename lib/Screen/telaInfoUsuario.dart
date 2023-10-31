@@ -7,14 +7,16 @@ void main() {
 }
 
 class UserInfoScreen extends StatelessWidget {
+  const UserInfoScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Informações Pessoais'),
+        title: const Text('Informações Pessoais'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: UserInfoWidget(),
       ),
     );
@@ -22,6 +24,8 @@ class UserInfoScreen extends StatelessWidget {
 }
 
 class UserInfoWidget extends StatefulWidget {
+  const UserInfoWidget({super.key});
+
   @override
   _UserInfoWidgetState createState() => _UserInfoWidgetState();
 }
@@ -43,7 +47,7 @@ class _UserInfoWidgetState extends State<UserInfoWidget> {
           onPressed: () {
             // Implemente a ação para editar informações pessoais aqui
           },
-          child: Text('Editar Informações'),
+          child: const Text('Editar Informações'),
         ),
       ],
     );
@@ -54,7 +58,7 @@ class UserInfoField extends StatelessWidget {
   final String label;
   final String value;
 
-  UserInfoField({required this.label, required this.value});
+  const UserInfoField({required this.label, required this.value});
 
   @override
   Widget build(BuildContext context) {
@@ -63,13 +67,13 @@ class UserInfoField extends StatelessWidget {
       children: <Widget>[
         Text(
           label,
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         Text(
           value,
-          style: TextStyle(fontSize: 16),
+          style: const TextStyle(fontSize: 16),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
       ],
     );
   }

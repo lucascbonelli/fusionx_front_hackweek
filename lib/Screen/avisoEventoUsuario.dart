@@ -10,7 +10,7 @@ class AvisoEventoUsuario extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: AvisoExample(),
     );
   }
@@ -82,7 +82,7 @@ class _AvisoExampleState extends State<AvisoExample> {
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: onTabTapped,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Início',

@@ -6,6 +6,8 @@ import '../widgets/bottom.dart';
 import '../widgets/sessao_form_widgets.dart';
 
 class SessionFormScreen extends StatefulWidget {
+  const SessionFormScreen({super.key});
+
   @override
   _SessionFormScreenState createState() => _SessionFormScreenState();
 }
@@ -120,7 +122,7 @@ class _SessionFormScreenState extends State<SessionFormScreen> {
                   ),
                 );
               },
-              child: Text('Salvar'),
+              child: const Text('Salvar'),
             )
           ],
         )

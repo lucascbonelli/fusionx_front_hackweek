@@ -175,12 +175,12 @@ class RegisterButton extends StatelessWidget {
             // Passwords don't match
           }
         },
-        child: Text('Cadastrar'),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(
             const Color.fromARGB(255, 194, 245, 135),
           ),
         ),
+        child: Text('Cadastrar'),
       )
     );
     }

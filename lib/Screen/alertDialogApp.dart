@@ -8,7 +8,7 @@ class AlertDialogApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       
     );
   }
@@ -41,7 +41,7 @@ class _DialogExampleState extends State<DialogExample> {
                     onPressed: () {
                       Navigator.pop(context, 'Cancel');
                     },
-                    child: const Text('Cancel'),
+                    child: const Text('Cancelar'),
                   ),
                   TextButton(
                     onPressed: () {
@@ -60,7 +60,7 @@ class _DialogExampleState extends State<DialogExample> {
             borderRadius: BorderRadius.circular(20.0), // Raio para arredondar
             child: Container(
               color: Colors.blue, // Cor de fundo do botão
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: const Text('MENSAGEM'),
             ),
           ),

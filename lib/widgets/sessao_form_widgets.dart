@@ -33,7 +33,7 @@ class DateTimePicker extends StatelessWidget {
   final VoidCallback onPressed;
 
   const DateTimePicker(
-      {required this.label, required this.value, required this.onPressed});
+      {super.key, required this.label, required this.value, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -54,14 +54,14 @@ class SessionContentField extends StatelessWidget {
   final HtmlEditorController htmlEditorController;
   final TextEditingController controller;
 
-  SessionContentField({required this.controller})
+  SessionContentField({super.key, required this.controller})
       : htmlEditorController = HtmlEditorController();
   @override
   Widget build(BuildContext context) {
     return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
+              SizedBox(
                 height: 300,
                 child: HtmlEditor(
                   controller: htmlEditorController,

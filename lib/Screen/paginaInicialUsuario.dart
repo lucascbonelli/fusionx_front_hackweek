@@ -47,17 +47,17 @@ class _PaginaInicialUsuarioState extends State<PaginaInicialUsuario> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CarrosselWidget(),
+            const CarrosselWidget(),
             ElevatedButton(
               onPressed: () {
                       Navigator.of(context).pushReplacement(
                         MaterialPageRoute(builder: (context) => TelaSessao()),
                       );
               },
-              child: Text("INSCREVA-SE"),
+              child: const Text("INSCREVA-SE"),
               
             ),  
-            SizedBox(height: 12),
+            const SizedBox(height: 12),
 
             ElevatedButton(
               onPressed: () {
@@ -70,21 +70,21 @@ class _PaginaInicialUsuarioState extends State<PaginaInicialUsuario> {
                   borderRadius: BorderRadius.circular(10.0),
                   color: Colors.blue,
                 ),
-                padding: EdgeInsets.all(3),
+                padding: const EdgeInsets.all(3),
                 child: Text(
                   _isDescriptionExpanded ? "Minimizar Descrição" : "Maximizar Descrição",
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
               ),
             ),
             if (_isDescriptionExpanded)
               Card(
-                margin: EdgeInsets.all(8.0),
+                margin: const EdgeInsets.all(8.0),
                 elevation: 2,
                 child: Column(
                   children: [
                     ListTile(
-                      title: Text("Descrição do Evento"),
+                      title: const Text("Descrição do Evento"),
                       trailing: IconButton(
                         icon: Icon(_isDescriptionExpanded ? Icons.remove : Icons.add),
                         onPressed: () {
@@ -94,8 +94,8 @@ class _PaginaInicialUsuarioState extends State<PaginaInicialUsuario> {
                         },
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
+                    const Padding(
+                      padding: EdgeInsets.all(16.0),
                       child: Text("Esse evento oferece a grande oportunidade......"),
                     ),
                   ],

@@ -24,7 +24,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.bar_chart),
-          label: "Grafico",
+          label: "Gráfico",
         ),
       ],
       onTap: onTabTapped,
