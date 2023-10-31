@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:teste/Screen/telaSessao.dart';
-import '../widgets/app_bar.dart';
-import '../widgets/carrossel_widget.dart';
-import '../widgets/bottomNavigation.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/carrossel_widget.dart';
+import '../../widgets/bottomNavigation.dart';
 
 
 class PaginaInicialUsuario extends StatefulWidget {
@@ -38,7 +38,7 @@ class _PaginaInicialUsuarioState extends State<PaginaInicialUsuario> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo.jpg"),
+              child: Image.asset("lib/imagens/logo_light.png"),
             ),
           ],
         ),

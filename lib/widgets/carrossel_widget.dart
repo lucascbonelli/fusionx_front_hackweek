@@ -17,6 +17,24 @@ class CarrosselWidget extends StatelessWidget {
           margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
+            image: const DecorationImage(
+              image: AssetImage("lib/imagens/Events/Event1.jfif"),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0xFF000000),
+                offset: Offset.zero,
+                blurRadius: 5,
+                spreadRadius: 1,
+              ),
+            ],
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
             boxShadow: const [
               BoxShadow(
                 color: Color(0xFF000000),
@@ -26,7 +44,7 @@ class CarrosselWidget extends StatelessWidget {
               ),
             ],
             image: const DecorationImage(
-              image: AssetImage("lib/imagens/TOP.jpg"),
+              image: AssetImage("lib/imagens/Events/Event2.jfif"),
               fit: BoxFit.cover,
             ),
           ),
@@ -35,8 +53,34 @@ class CarrosselWidget extends StatelessWidget {
           margin: const EdgeInsets.all(5.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0xFF000000),
+                offset: Offset.zero,
+                blurRadius: 5,
+                spreadRadius: 1,
+              ),
+            ],
             image: const DecorationImage(
-              image: AssetImage("lib/imagens/logo1.jfif"),
+              image: AssetImage("lib/imagens/Events/Event3.jfif"),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            boxShadow: const [
+              BoxShadow(
+                color: Color(0xFF000000),
+                offset: Offset.zero,
+                blurRadius: 5,
+                spreadRadius: 1,
+              ),
+            ],
+            image: const DecorationImage(
+              image: AssetImage("lib/imagens/Events/Event4.jfif"),
               fit: BoxFit.cover,
             ),
           ),

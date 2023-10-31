@@ -10,7 +10,7 @@ class Logo extends StatelessWidget {
         height: 65,
         width: 65,
         child: Image.asset(
-          'lib/imagens/logo2.png',
+          'lib/imagens/logo_light.png',
           fit: BoxFit.cover,
           width: 50,
           height: 50,
@@ -90,10 +90,14 @@ class _TextFormState extends State<TextForm> {
 
 class Botoes extends StatelessWidget {
   final VoidCallback onEntrarPressed;
+  final VoidCallback onEsqueceuSenhaPressed;
+  final VoidCallback onCadastrarPressed;
 
   const Botoes({
     Key? key,
     required this.onEntrarPressed,
+    required this.onEsqueceuSenhaPressed,
+    required this.onCadastrarPressed,
   }) : super(key: key);
 
   @override
@@ -106,11 +110,11 @@ class Botoes extends StatelessWidget {
           child: const Text('Entrar'),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: onEsqueceuSenhaPressed,
           child: const Text('Esqueceu sua senha?'),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: onCadastrarPressed,
           child: const Text('Cadastre-se'),
         ),
       ],

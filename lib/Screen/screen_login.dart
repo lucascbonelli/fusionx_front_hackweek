@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/paginaInicialUsuario.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/user/paginaInicialUsuario.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import '../widgets/login_widgets.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -59,6 +59,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   );
                 }
               },
+              onEsqueceuSenhaPressed: () {},
+              onCadastrarPressed: () {},
             ),
           ],
         ),

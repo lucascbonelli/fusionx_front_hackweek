@@ -34,7 +34,7 @@ class _AppBarTopState extends State<AppBarTop> {
             padding: const EdgeInsets.all(3),
             child: ClipOval(
               child: SizedBox(
-                  height: 100, child: Image.asset("lib/imagens/logo2.png")),
+                  height: 150, child: Image.asset("lib/imagens/logo_dark.png")),
             ),
           ),
           IconButton(

@@ -5,7 +5,7 @@ import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:teste/Screen/screen_formulario_cadastro_evento3.dart';
 import 'package:teste/Screen/screen_grafico.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/bottom.dart';
@@ -70,7 +70,7 @@ class _FormularioCadastro2State extends State<FormularioCadastro2> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo2.png"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Item 1"),

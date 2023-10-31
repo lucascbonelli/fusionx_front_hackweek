@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'paginaInicialUsuario.dart';
+import 'user/paginaInicialUsuario.dart';
 
 void main() {
   runApp(const AvisoEventoUsuario());
