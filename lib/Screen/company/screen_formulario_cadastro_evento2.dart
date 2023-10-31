@@ -3,12 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:teste/Screen/screen_formulario_cadastro_evento3.dart';
+import 'package:teste/Screen/company/screen_formulario_cadastro_evento3.dart';
 import 'package:teste/Screen/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 
-import '../widgets/app_bar.dart';
-import '../widgets/bottom.dart';
+import 'package:teste/widgets/app_bar.dart';
+import 'package:teste/widgets/bottom.dart';
 
 class FormularioCadastro2 extends StatefulWidget {
   const FormularioCadastro2({Key? key});

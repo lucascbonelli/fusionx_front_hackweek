@@ -3,9 +3,9 @@ import 'package:html_editor_enhanced_fork/html_editor.dart';
 import 'package:intl/intl.dart';
 import 'package:teste/Screen/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
-import '../widgets/app_bar.dart';
-import '../widgets/bottom.dart';
-import 'sessao_forms_screen.dart';
+import 'package:teste/widgets/app_bar.dart';
+import 'package:teste/widgets/bottom.dart';
+import 'package:teste/Screen/sessao_forms_screen.dart';
 
 class FormularioCadastro3 extends StatefulWidget {
   const FormularioCadastro3({Key? key}) : super(key: key);
