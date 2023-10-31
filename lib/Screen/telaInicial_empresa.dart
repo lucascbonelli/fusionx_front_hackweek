@@ -8,7 +8,6 @@ import '../widgets/app_bar.dart';
 import '../widgets/botao_cadastrar_widget.dart';
 import '../widgets/bottom.dart';
 import '../widgets/cadastro_evento_widget.dart';
-import '../widgets/carrossel_widget.dart';
 
 class TelaInicialEmpresa extends StatefulWidget {
   @override
@@ -51,7 +50,7 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
               child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Grafico"),
+              title: const Text("Gráfico"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

@@ -2,9 +2,17 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:teste/Screen/TelaInicialUsuario.dart';
+import 'package:teste/Screen/paginaMensagens.dart';
+import 'package:teste/Screen/screen_cadastro_usuario.dart';
 import 'package:teste/Screen/screen_login.dart';
+import 'package:teste/Screen/telaInfoUsuario.dart';
 import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/telaSessao.dart';
 import 'package:teste/widgets/login_widgets.dart';
+import 'Screen/avisoEventoUsuario.dart';
+import 'Screen/cadastroEventoUsuario.dart';
+import 'Screen/paginaInicialUsuario.dart';
 import 'Screen/screen_formulario_cadastro_evento.dart';
 import 'Screen/screen_mensagem_programada.dart';
 import 'core/message_data.dart';
@@ -46,6 +54,7 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => ScreenLogin(),
         '/tela_de_boas_vindas': (context) => TelaInicialEmpresa(),
         'tela_inicial_usuario': (context) => MessageScreen(),
+        'paginaInicialUsuario' : (context) => PaginaInicialUsuario(),
       },
     );
   }

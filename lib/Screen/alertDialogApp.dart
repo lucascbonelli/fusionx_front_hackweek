@@ -9,6 +9,7 @@ class AlertDialogApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
+      
     );
   }
 }
@@ -40,7 +41,7 @@ class _DialogExampleState extends State<DialogExample> {
                     onPressed: () {
                       Navigator.pop(context, 'Cancel');
                     },
-                    child: const Text('Cancel'),
+                    child: const Text('Cancelar'),
                   ),
                   TextButton(
                     onPressed: () {

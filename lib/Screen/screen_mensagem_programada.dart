@@ -9,6 +9,8 @@ import '../core/message_data.dart';
 import '../widgets/bottom.dart';
 
 class MessageScreen extends StatefulWidget {
+  const MessageScreen({super.key});
+
   @override
   _MessageScreenState createState() => _MessageScreenState();
 }
@@ -49,7 +51,7 @@ class _MessageScreenState extends State<MessageScreen> {
               child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Pagina Inicial"),
+              title: const Text("Página Inicial"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -59,7 +61,7 @@ class _MessageScreenState extends State<MessageScreen> {
               },
             ),
             ListTile(
-              title: const Text("Grafico"),
+              title: const Text("Gráfico"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/screen_grafico.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/paginaMensagens.dart';
+import 'package:teste/Screen/telaInfoUsuario.dart';
 
 import '../widgets/app_bar.dart';
-import '../widgets/bottom.dart';
-import '../widgets/formulario_cadastro_evento_widget.dart';
+import '../widgets/bottomNavigation.dart';
 
-class FormularioCadastro extends StatefulWidget {
-  const FormularioCadastro({super.key});
+class TelaInicialUsuario extends StatefulWidget {
+  const TelaInicialUsuario({super.key});
 
   @override
-  State<FormularioCadastro> createState() => _FormularioCadastroState();
+  State<TelaInicialUsuario> createState() => _TelaInicialUsuarioState();
 }
 
-class _FormularioCadastroState extends State<FormularioCadastro> {
+class _TelaInicialUsuarioState extends State<TelaInicialUsuario> {
   int _currentIndex = 0;
 
   void _onTabTapped(int index) {
@@ -24,15 +23,13 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
     if (index == 0) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => TelaInicialEmpresa()),
+        MaterialPageRoute(builder: (context) => const TelaInicialUsuario()),
       );
     } else if (index == 1) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ScreenGrafico(
-          peopleHasCame: 10,
-          peopleHasConfirmed: 20,
-          peopleHasConfirmedAndNotCame: 10,)),
+        MaterialPageRoute(builder: (context) => PaginaMensagens(
+          )),
       );
     }
   }
@@ -41,9 +38,7 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(150),
-        child: AppBarTop(hasMenu: false),
-      ),
+          preferredSize: Size.fromHeight(150), child: AppBarTop(hasMenu:false)),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
@@ -51,15 +46,23 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
               child: Image.asset("lib/imagens/logo2.png"),
             ),
             ListTile(
-              title: const Text("Gráfico"),
+              title: const Text("Mensagem"),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (context) => ScreenGrafico(
-                      peopleHasCame: 10,
-                      peopleHasConfirmed: 20,
-                      peopleHasConfirmedAndNotCame: 10,
+                    builder: (context) => PaginaMensagens(
+                      
                     ),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text("Dados"),
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const UserInfoScreen(),
                   ),
                 );
               },
@@ -67,7 +70,7 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
           ],
         ),
       ),
-      body: const LocalInfoWidget(),
+    
       bottomNavigationBar: CustomBottomNavigationBar(
         currentIndex: _currentIndex,
         onTabTapped: _onTabTapped,

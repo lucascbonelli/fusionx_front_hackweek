@@ -17,8 +17,7 @@ class _WriteMessageScreenState extends State<WriteMessageScreen> {
   final TextEditingController _tituloController = TextEditingController();
   DateTime selectedDate = DateTime.now(); // Variável para armazenar a data
   String selectedDropdownValue = 'Selecionar uma opção'; // Valor inicial do DropdownButton
-  List<String> dropdownOptions = ['Selecionar uma opção','Pessoas que confirmaram', 'Pessoas que não confirmaram', 'Todos']; // Opções do DropdownButton
-
+  List<String> dropdownOptions = ['Selecionar uma opção', 'Todos', 'Presentes', 'Ausentes - Todos', 'Ausentes - Cancelados', 'Ausentes - Sem feedback']; // Opções do DropdownButton
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(
       context: context,

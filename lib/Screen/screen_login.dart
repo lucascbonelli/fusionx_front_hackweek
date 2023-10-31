@@ -24,8 +24,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Logo(),
-            TextoEntrar(),
+            const Logo(),
+            const TextoEntrar(),
             TextForm(
               emailController: emailController,
               passwordController: passwordController,
@@ -34,10 +34,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
               onEntrarPressed: () {
                 // Faça a validação aqui
                 const String userFixedEmail = 'user@email.com';
-                const String userFixedPassword = 'userpassword';
+                const String userFixedPassword = 'password';
 
                 const String companyFixedEmail = 'company@email.com';
-                const String companyFixedPassword = 'companypassword';
+                const String companyFixedPassword = 'password';
 
                 final String enteredEmail = emailController.text;
                 final String enteredPassword = passwordController.text;
@@ -45,7 +45,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 if (enteredEmail == userFixedEmail && enteredPassword == userFixedPassword) {
                   Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => PaginaInicialUsuario()));
+                      MaterialPageRoute(builder: (context) => const PaginaInicialUsuario()));
                 } else if (enteredEmail == companyFixedEmail && enteredPassword == companyFixedPassword) {
                   Navigator.pushReplacement(
                       context,
@@ -53,7 +53,7 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 } else {
                   // Exibir uma mensagem de erro se não corresponderem a nenhum dos fixos.
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
+                    const SnackBar(
                       content: Text('Credenciais inválidas'),
                     ),
                   );

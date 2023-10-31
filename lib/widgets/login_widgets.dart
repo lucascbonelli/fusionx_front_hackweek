@@ -25,8 +25,8 @@ class TextoEntrar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 30),
+    return const Padding(
+      padding: EdgeInsets.only(bottom: 30),
       child: Text(
         'Entrar',
         style: TextStyle(fontSize: 25),
@@ -59,7 +59,7 @@ class _TextFormState extends State<TextForm> {
           padding: const EdgeInsets.all(15),
           child: TextField(
             controller: widget.emailController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Email',
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -74,11 +74,11 @@ class _TextFormState extends State<TextForm> {
             child: TextField(
               controller: widget.passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(50)),
                 ),
-                labelText: 'Password',
+                labelText: 'Senha',
               ),
             ),
           ),
@@ -103,15 +103,15 @@ class Botoes extends StatelessWidget {
       children: [
         ElevatedButton(
           onPressed: onEntrarPressed,
-          child: Text('Entrar'),
+          child: const Text('Entrar'),
         ),
         TextButton(
           onPressed: () {},
-          child: Text('Esqueceu sua senha?'),
+          child: const Text('Esqueceu sua senha?'),
         ),
         ElevatedButton(
           onPressed: () {},
-          child: Text('Cadastre-se'),
+          child: const Text('Cadastre-se'),
         ),
       ],
     );

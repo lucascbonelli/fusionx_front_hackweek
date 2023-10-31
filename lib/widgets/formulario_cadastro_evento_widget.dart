@@ -47,76 +47,69 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Container(
-                      child: TextField(
-                          controller: nomeDoLocalController,
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(20),
-                              ),
-                            ),
-                            labelText: 'Nome do Local',
+                  TextField(
+                      controller: nomeDoLocalController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
                           ),
-                          onChanged: (value) {
-                            setState(() {
-                              localInfo.nomeDoLocal = value;
-                            });
-                          })),
+                        ),
+                        labelText: 'Nome do Local',
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          localInfo.nomeDoLocal = value;
+                        });
+                      }),
                   _buildCepNumeroRow(cepController, numeroController),
-                  Container(
-                    child: TextField(
-                      controller: ruaController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
+                  TextField(
+                    controller: ruaController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
                         ),
-                        labelText: 'Rua',
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          localInfo.rua = value;
-                        });
-                      },
+                      labelText: 'Rua',
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        localInfo.rua = value;
+                      });
+                    },
                   ),
-                  Container(
-                    child: TextField(
-                      controller: bairroController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
+                  TextField(
+                    controller: bairroController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
                         ),
-                        labelText: 'Bairro',
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          localInfo.bairro = value;
-                        });
-                      },
+                      labelText: 'Bairro',
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        localInfo.bairro = value;
+                      });
+                    },
                   ),
-                  Container(
-                    child: TextField(
-                      controller: complementoController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(20),
-                          ),
+                  TextField(
+                    controller: complementoController,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(20),
                         ),
-                        labelText: 'Complemento',
                       ),
-                      onChanged: (value) {
-                        setState(() {
-                          localInfo.complemento = value;
-                        });
-                      },
+                      labelText: 'Complemento',
                     ),
+                    onChanged: (value) {
+                      setState(() {
+                        localInfo.complemento = value;
+                      });
+                    },
                   ),
                   _buildCidadeEstadoRow(),
                   Row(
@@ -134,7 +127,7 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
                                 ),
                               );
                             },
-                            child: const Text('Proxima etapa'),
+                            child: const Text('Próxima etapa'),
                           ),
                         ),
                       ),
@@ -156,7 +149,7 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Container(
+        SizedBox(
           width: 210,
           child: TextField(
             controller: cepController,
@@ -176,7 +169,7 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
           ),
         ),
         const SizedBox(width: 16),
-        Container(
+        SizedBox(
           width: 125,
           child: TextField(
             controller: numeroController,
@@ -203,7 +196,7 @@ class _LocalInfoWidgetState extends State<LocalInfoWidget> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        Container(
+        SizedBox(
           width: 180,
           child: TextField(
             controller: cidadeController,
