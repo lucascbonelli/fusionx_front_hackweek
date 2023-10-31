@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/paginaInicialUsuario.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/user/paginaInicialUsuario.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import '../widgets/login_widgets.dart';
 
 class ScreenLogin extends StatefulWidget {
@@ -33,10 +33,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
             Botoes(
               onEntrarPressed: () {
                 // Faça a validação aqui
-                const String userFixedEmail = 'user@email.com';
+                const String userFixedEmail = 'raphael.teodoro@gmail.com';
                 const String userFixedPassword = 'password';
 
-                const String companyFixedEmail = 'company@email.com';
+                const String companyFixedEmail = 'claudia.cabral@gmail.com';
                 const String companyFixedPassword = 'password';
 
                 final String enteredEmail = emailController.text;
@@ -59,6 +59,8 @@ class _ScreenLoginState extends State<ScreenLogin> {
                   );
                 }
               },
+              onEsqueceuSenhaPressed: () {},
+              onCadastrarPressed: () {},
             ),
           ],
         ),

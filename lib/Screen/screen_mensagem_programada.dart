@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:teste/Screen/screen_escrever_mensagem.dart';
 import 'package:teste/Screen/screen_grafico.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import 'package:teste/widgets/app_bar.dart';
 import '../core/message_data.dart';
 import '../widgets/bottom.dart';
@@ -48,7 +48,7 @@ class _MessageScreenState extends State<MessageScreen> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo2.png"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Página Inicial"),

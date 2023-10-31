@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:teste/Screen/screen_grafico.dart';
 import 'package:teste/Screen/screen_mensagem_programada.dart';
 
-import '../widgets/app_bar.dart';
-import '../widgets/botao_cadastrar_widget.dart';
-import '../widgets/bottom.dart';
-import '../widgets/cadastro_evento_widget.dart';
+import '../../widgets/app_bar.dart';
+import '../../widgets/botao_cadastrar_widget.dart';
+import '../../widgets/bottom.dart';
+import '../../widgets/cadastro_evento_widget.dart';
 
 class TelaInicialEmpresa extends StatefulWidget {
   @override
@@ -47,7 +47,7 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo2.png"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Gráfico"),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teste/Screen/screen_grafico.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import 'package:teste/widgets/app_bar.dart';
 import '../widgets/bottom.dart';
 import '../widgets/sessao_form_widgets.dart';

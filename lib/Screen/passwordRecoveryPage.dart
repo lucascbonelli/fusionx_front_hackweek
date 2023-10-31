@@ -60,7 +60,7 @@ class _PasswordRecoveryFormState extends State<PasswordRecoveryForm> {
               borderRadius: BorderRadius.circular(50.0), // Raio para arredondar
               child: SizedBox(
                 height: 100,
-                child: Image.asset("lib/imagens/logo.jpg"),
+                child: Image.asset("lib/imagens/logo_dark.png"),
               ),
             ),
           ),

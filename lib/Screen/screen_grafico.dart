@@ -3,7 +3,7 @@ import 'package:pie_chart/pie_chart.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/bottom.dart';
-import 'telaInicial_empresa.dart';
+import 'company/telaInicial_empresa.dart';
 
 class ScreenGrafico extends StatefulWidget {
   final double peopleHasCame;

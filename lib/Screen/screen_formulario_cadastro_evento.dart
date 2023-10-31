@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teste/Screen/screen_grafico.dart';
-import 'package:teste/Screen/telaInicial_empresa.dart';
+import 'package:teste/Screen/company/telaInicial_empresa.dart';
 
 import '../widgets/app_bar.dart';
 import '../widgets/bottom.dart';
@@ -48,7 +48,7 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo2.png"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Gráfico"),

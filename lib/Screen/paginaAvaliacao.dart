@@ -26,7 +26,7 @@ class _EventRatingPageState extends State<EventRatingPage> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo.jpg"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Item 1"),

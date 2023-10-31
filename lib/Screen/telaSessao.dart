@@ -30,7 +30,7 @@ class _TelaSessaoState extends State<TelaSessao> {
         child: ListView(
           children: <Widget>[
             DrawerHeader(
-              child: Image.asset("lib/imagens/logo.jpg"),
+              child: Image.asset("lib/imagens/logo_dark.png"),
             ),
             ListTile(
               title: const Text("Item 1"),
