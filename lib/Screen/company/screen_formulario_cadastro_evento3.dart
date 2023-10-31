@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced_fork/html_editor.dart';
 import 'package:intl/intl.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
-import '../widgets/app_bar.dart';
-import '../widgets/bottom.dart';
-import 'sessao_forms_screen.dart';
+import 'package:teste/widgets/app_bar.dart';
+import 'package:teste/widgets/bottom.dart';
+import 'package:teste/Screen/sessao_forms_screen.dart';
 
 class FormularioCadastro3 extends StatefulWidget {
   const FormularioCadastro3({Key? key}) : super(key: key);
@@ -81,8 +81,11 @@ class _FormularioCadastro3State extends State<FormularioCadastro3> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Image.asset("lib/imagens/logo_dark.png"),
+            Container(
+              color: const Color.fromRGBO(0, 168, 231, 100),
+              child: DrawerHeader(
+                child: Image.asset("lib/imagens/logo_dark.png"),
+              ),
             ),
             ListTile(
               title: const Text("Página Inicial"),

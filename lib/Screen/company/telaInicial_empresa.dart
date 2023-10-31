@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, camel_case_types, file_names
 
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/screen_mensagem_programada.dart';
 
 import '../../widgets/app_bar.dart';
@@ -12,6 +12,16 @@ import '../../widgets/cadastro_evento_widget.dart';
 class TelaInicialEmpresa extends StatefulWidget {
   @override
   State<TelaInicialEmpresa> createState() => _TelaInicialEmpresaState();
+}
+
+class Evento {
+  final String imageName;
+  final String title;
+
+  Evento(
+    this.imageName,
+    this.title
+  );
 }
 
 class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
@@ -40,14 +50,24 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
 
   @override
   Widget build(BuildContext context) {
+    List<Evento> eventos = [
+      Evento('lib/imagens/Events/Event1.jfif', 'IOT Tech Expo'),
+      Evento('lib/imagens/Events/Event2.jfif', 'META V SUMMIT'),
+      Evento('lib/imagens/Events/Event3.jfif', 'TAIWAN TECH SUMMIT'),
+      Evento('lib/imagens/Events/Event4.jfif', 'OUTLOOK FOR TECH'),
+    ];
+
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(150), child: AppBarTop(hasMenu:true)),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Image.asset("lib/imagens/logo_dark.png"),
+            Container(
+              color: const Color.fromRGBO(0, 168, 231, 100),
+              child: DrawerHeader(
+                child: Image.asset("lib/imagens/logo_dark.png"),
+              ),
             ),
             ListTile(
               title: const Text("Gráfico"),
@@ -78,14 +98,16 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
       ),
       body: Column(
         children: <Widget>[
-         //CarrosselWidget(),
           SizedBox(width: 20,),
-          BotaoCadastrarEvento(), // Usando o widget do botão "Cadastrar Evento"
+          Container(
+            margin: const EdgeInsets.all(8.0),
+            child: BotaoCadastrarEvento(),
+          ),
           Flexible(
             child: ListView.builder(
-              itemCount: 3,
+              itemCount: eventos.length,
               itemBuilder: (context, index) {
-                return EventoCadastradoCard(); // Usando o widget do item da lista
+                return EventoCadastradoCard(imageName: eventos[index].imageName, eventTitle: eventos[index].title,);
               },
             ),
           ),

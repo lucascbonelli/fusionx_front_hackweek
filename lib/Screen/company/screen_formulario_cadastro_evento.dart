@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 
-import '../widgets/app_bar.dart';
-import '../widgets/bottom.dart';
-import '../widgets/formulario_cadastro_evento_widget.dart';
+import 'package:teste/widgets/app_bar.dart';
+import 'package:teste/widgets/bottom.dart';
+import 'package:teste/widgets/formulario_cadastro_evento_widget.dart';
 
 class FormularioCadastro extends StatefulWidget {
   const FormularioCadastro({super.key});
@@ -47,8 +47,11 @@ class _FormularioCadastroState extends State<FormularioCadastro> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Image.asset("lib/imagens/logo_dark.png"),
+            Container(
+              color: const Color.fromRGBO(0, 168, 231, 100),
+              child: DrawerHeader(
+                child: Image.asset("lib/imagens/logo_dark.png"),
+              ),
             ),
             ListTile(
               title: const Text("Gráfico"),

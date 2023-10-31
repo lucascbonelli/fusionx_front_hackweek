@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/screen_formulario_cadastro_evento.dart';
+import 'package:teste/Screen/company/screen_formulario_cadastro_evento.dart';
 
 class BotaoCadastrarEvento extends StatelessWidget {
   const BotaoCadastrarEvento({super.key});

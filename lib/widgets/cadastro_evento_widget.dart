@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 
 class EventoCadastradoCard extends StatefulWidget {
-  final ImageProvider? image;
-  const EventoCadastradoCard({super.key, this.image, });
+  final String imageName;
+  final String eventTitle;
+  const EventoCadastradoCard({
+    super.key,
+    required this.imageName,
+    required this.eventTitle,
+  });
 
   @override
   State<EventoCadastradoCard> createState() => _EventoCadastradoCardState();
@@ -22,17 +27,19 @@ class _EventoCadastradoCardState extends State<EventoCadastradoCard> {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                image: widget.image != null
-                    ? DecorationImage(
-                  image: widget.image!,
-                  fit: BoxFit.cover,
-                )
-                    : null,
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(5.0),
+                  bottomLeft: Radius.circular(5.0),
+                ),
+                image: DecorationImage(
+                  image: AssetImage(widget.imageName),
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
             const SizedBox(width: 12),
-            const Text('Teste',
-              style: TextStyle(
+            Text(widget.eventTitle,
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,),
             ),

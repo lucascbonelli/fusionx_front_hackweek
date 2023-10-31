@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../Screen/screen_formulario_cadastro_evento2.dart';
-import '../core/constants/states_constants.dart';
-import '../core/model.dart';
+import 'package:teste/Screen/company/screen_formulario_cadastro_evento2.dart';
+import 'package:teste/core/constants/states_constants.dart';
+import 'package:teste/core/model.dart';
 
 class LocalInfoWidget extends StatefulWidget {
   const LocalInfoWidget({Key? key}) : super(key: key);

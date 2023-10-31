@@ -12,7 +12,7 @@ import 'package:teste/widgets/login_widgets.dart';
 import 'Screen/avisoEventoUsuario.dart';
 import 'Screen/cadastroEventoUsuario.dart';
 import 'Screen/user/paginaInicialUsuario.dart';
-import 'Screen/screen_formulario_cadastro_evento.dart';
+import 'Screen/company/screen_formulario_cadastro_evento.dart';
 import 'Screen/screen_mensagem_programada.dart';
 import 'core/message_data.dart';
 import 'core/model.dart';
