@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, camel_case_types, file_names
 
 import 'package:flutter/material.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/screen_mensagem_programada.dart';
 
 import '../../widgets/app_bar.dart';

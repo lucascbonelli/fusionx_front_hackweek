@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; // Importe para manipulação de data e hora
 import 'package:provider/provider.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import 'package:teste/widgets/app_bar.dart';
 import '../core/message_data.dart';

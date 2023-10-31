@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:html_editor_enhanced_fork/html_editor.dart';
 import 'package:intl/intl.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import 'package:teste/widgets/app_bar.dart';
 import 'package:teste/widgets/bottom.dart';
