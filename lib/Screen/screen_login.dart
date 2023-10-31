@@ -33,10 +33,10 @@ class _ScreenLoginState extends State<ScreenLogin> {
             Botoes(
               onEntrarPressed: () {
                 // Faça a validação aqui
-                const String userFixedEmail = 'user@email.com';
+                const String userFixedEmail = 'raphael.teodoro@gmail.com';
                 const String userFixedPassword = 'password';
 
-                const String companyFixedEmail = 'company@email.com';
+                const String companyFixedEmail = 'claudia.cabral@gmail.com';
                 const String companyFixedPassword = 'password';
 
                 final String enteredEmail = emailController.text;
