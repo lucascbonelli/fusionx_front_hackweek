@@ -37,8 +37,11 @@ class _TelaSessaoState extends State<TelaSessao> {
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
-            DrawerHeader(
-              child: Image.asset("lib/imagens/logo_dark.png"),
+            Container(
+              color: const Color.fromRGBO(0, 168, 231, 100),
+              child: DrawerHeader(
+                child: Image.asset("lib/imagens/logo_dark.png"),
+              ),
             ),
             ListTile(
               title: const Text("Item 1"),
