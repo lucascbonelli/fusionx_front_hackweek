@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_bar.dart';
-import '../widgets/bottomNavigation.dart';
 
 class PaginaMensagens extends StatefulWidget {
   @override
@@ -21,7 +20,7 @@ class _PaginaMensagensState extends State<PaginaMensagens> {
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(150),
-        child: AppBarTop(),
+        child: AppBarTop(hasMenu: false),
       ),
       drawer: Drawer(
         child: ListView(
@@ -39,10 +38,6 @@ class _PaginaMensagensState extends State<PaginaMensagens> {
         ),
       ),
       body: MessageList(),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTabTapped: onTabTapped,
-      ),
     );
   }
 }
@@ -63,10 +58,10 @@ class _MessageListState extends State<MessageList> {
   List<Message> messages = [
     Message('MENSAGEM'),
     Message('INSCRIÇÃO!'),
-    Message('URGENTE'),
+    Message('FALTAM 2 DIAS!'),
     Message('MENSAGEM'),
     Message('INSCRIÇÃO!'),
-    Message('URGENTE'),
+    Message('CONFIRME NOVAMENTE SUA PRESENÇA'),
     Message('MENSAGEM'),
     Message('INSCRIÇÃO!'),
     Message('URGENTE'),
@@ -80,7 +75,7 @@ class _MessageListState extends State<MessageList> {
         return ListTile(
           title: Text(messages[index].text),
           trailing: ClipRRect(
-            borderRadius: BorderRadius.circular(20.0), // Raio para arredondar
+            borderRadius: BorderRadius.circular(20.0),
             child: IconButton(
               icon: Icon(
                 messages[index].isDeleted ? Icons.restore : Icons.delete,

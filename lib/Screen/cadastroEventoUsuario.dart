@@ -1,23 +1,25 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
-class EventoCadastradoCard extends StatefulWidget {
+class CadastroEventoUsuarioCard extends StatefulWidget {
   final ImageProvider? image;
-  const EventoCadastradoCard({super.key, this.image, });
+  const CadastroEventoUsuarioCard({super.key, this.image, });
 
   @override
-  State<EventoCadastradoCard> createState() => _EventoCadastradoCardState();
+  State<CadastroEventoUsuarioCard> createState() => _CadastroEventoUsuarioCardState();
 }
 
-class _EventoCadastradoCardState extends State<EventoCadastradoCard> {
+class _CadastroEventoUsuarioCardState extends State<CadastroEventoUsuarioCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 12, right: 12),
       child: Card(
+       
         elevation: 5,
         child: Row(
           children: [
+          
             Container(
               width: 100,
               height: 100,
@@ -31,7 +33,7 @@ class _EventoCadastradoCardState extends State<EventoCadastradoCard> {
               ),
             ),
             const SizedBox(width: 12),
-            const Text('Teste',
+            const Text('Evento',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,),

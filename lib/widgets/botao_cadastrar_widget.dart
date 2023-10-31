@@ -7,14 +7,14 @@ class BotaoCadastrarEvento extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
+      onPressed: () {
+        Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => const FormularioCadastro(),
             ),
           );
-        },
+      },
       child: const Text("Cadastrar Evento"),
     );
   }
