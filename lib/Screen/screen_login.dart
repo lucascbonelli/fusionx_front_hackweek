@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:teste/Screen/screen_cadastro_empresa.dart';
+import 'package:teste/Screen/screen_cadastro_usuario.dart';
 import 'package:teste/Screen/user/paginaInicialUsuario.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import '../widgets/login_widgets.dart';
@@ -60,7 +62,16 @@ class _ScreenLoginState extends State<ScreenLogin> {
                 }
               },
               onEsqueceuSenhaPressed: () {},
-              onCadastrarPressed: () {},
+              onCadastrarEmpresaPressed: () {
+                Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const screen_cadastro_empresa()));
+              },
+              onCadastrarUsuarioPressed: () {
+                Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const screen_cadastro_usuario()));
+              },
             ),
           ],
         ),

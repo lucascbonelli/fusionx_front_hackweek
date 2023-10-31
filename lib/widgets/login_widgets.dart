@@ -91,13 +91,15 @@ class _TextFormState extends State<TextForm> {
 class Botoes extends StatelessWidget {
   final VoidCallback onEntrarPressed;
   final VoidCallback onEsqueceuSenhaPressed;
-  final VoidCallback onCadastrarPressed;
+  final VoidCallback onCadastrarEmpresaPressed;
+  final VoidCallback onCadastrarUsuarioPressed;
 
   const Botoes({
     Key? key,
     required this.onEntrarPressed,
     required this.onEsqueceuSenhaPressed,
-    required this.onCadastrarPressed,
+    required this.onCadastrarEmpresaPressed,
+    required this.onCadastrarUsuarioPressed,
   }) : super(key: key);
 
   @override
@@ -105,17 +107,33 @@ class Botoes extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ElevatedButton(
-          onPressed: onEntrarPressed,
-          child: const Text('Entrar'),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+            child: ElevatedButton(
+            onPressed: onEntrarPressed,
+            child: const Text('Entrar'),
+          ),
         ),
-        TextButton(
-          onPressed: onEsqueceuSenhaPressed,
-          child: const Text('Esqueceu sua senha?'),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+            child: TextButton(
+            onPressed: onEsqueceuSenhaPressed,
+            child: const Text('Esqueceu sua senha?'),
+          ),
         ),
-        ElevatedButton(
-          onPressed: onCadastrarPressed,
-          child: const Text('Cadastre-se'),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+            child: ElevatedButton(
+            onPressed: onCadastrarEmpresaPressed,
+            child: const Text('Cadastrar empresa'),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.all(5.0),
+            child: ElevatedButton(
+            onPressed: onCadastrarUsuarioPressed,
+            child: const Text('Cadastrar usuário'),
+          ),
         ),
       ],
     );
