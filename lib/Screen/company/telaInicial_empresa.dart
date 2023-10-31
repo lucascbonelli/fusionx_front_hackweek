@@ -14,6 +14,16 @@ class TelaInicialEmpresa extends StatefulWidget {
   State<TelaInicialEmpresa> createState() => _TelaInicialEmpresaState();
 }
 
+class Evento {
+  final String imageName;
+  final String title;
+
+  Evento(
+    this.imageName,
+    this.title
+  );
+}
+
 class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
   int _currentIndex = 0;
 
@@ -40,6 +50,13 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
 
   @override
   Widget build(BuildContext context) {
+    List<Evento> eventos = [
+      Evento('lib/imagens/Events/Event1.jfif', 'IOT Tech Expo'),
+      Evento('lib/imagens/Events/Event2.jfif', 'META V SUMMIT'),
+      Evento('lib/imagens/Events/Event3.jfif', 'TAIWAN TECH SUMMIT'),
+      Evento('lib/imagens/Events/Event4.jfif', 'OUTLOOK FOR TECH'),
+    ];
+
     return Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(150), child: AppBarTop(hasMenu:true)),
@@ -81,14 +98,16 @@ class _TelaInicialEmpresaState extends State<TelaInicialEmpresa> {
       ),
       body: Column(
         children: <Widget>[
-         //CarrosselWidget(),
           SizedBox(width: 20,),
-          BotaoCadastrarEvento(), // Usando o widget do botão "Cadastrar Evento"
+          Container(
+            margin: const EdgeInsets.all(8.0),
+            child: BotaoCadastrarEvento(),
+          ),
           Flexible(
             child: ListView.builder(
-              itemCount: 3,
+              itemCount: eventos.length,
               itemBuilder: (context, index) {
-                return EventoCadastradoCard(); // Usando o widget do item da lista
+                return EventoCadastradoCard(imageName: eventos[index].imageName, eventTitle: eventos[index].title,);
               },
             ),
           ),
