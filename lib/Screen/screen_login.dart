@@ -36,19 +36,19 @@ class _ScreenLoginState extends State<ScreenLogin> {
               onEntrarPressed: () {
                 // Faça a validação aqui
                 const String userFixedEmail = 'raphael.teodoro@gmail.com';
-                const String userFixedPassword = 'password';
+                const String userFixedPassword = '';
 
                 const String companyFixedEmail = 'claudia.cabral@gmail.com';
-                const String companyFixedPassword = 'password';
+                const String companyFixedPassword = '';
 
                 final String enteredEmail = emailController.text;
                 final String enteredPassword = passwordController.text;
 
-                if (enteredEmail == userFixedEmail) {
+                if (enteredEmail == userFixedEmail && enteredPassword != userFixedPassword) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => const PaginaInicialUsuario()));
-                } else if (enteredEmail == companyFixedEmail) {
+                } else if (enteredEmail == companyFixedEmail && enteredPassword != companyFixedPassword) {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(builder: (context) => TelaInicialEmpresa()));

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:teste/Screen/screen_escrever_mensagem.dart';
-import 'package:teste/Screen/screen_grafico.dart';
+import 'package:teste/Screen/company/screen_grafico.dart';
 import 'package:teste/Screen/company/telaInicial_empresa.dart';
 import 'package:teste/widgets/app_bar.dart';
 import '../core/message_data.dart';
@@ -83,7 +83,7 @@ class _MessageScreenState extends State<MessageScreen> {
             const SizedBox(height: 25),
             ElevatedButton(
               onPressed: () async {
-                final result = await Navigator.push(
+                await Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => WriteMessageScreen()),
                 );
